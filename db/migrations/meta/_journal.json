@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1734005696933,
-      "tag": "0000_long_madame_web",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1734005977222,
-      "tag": "0001_futuristic_deadpool",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1734006112126,
-      "tag": "0002_freezing_warstar",
+      "when": 1734022935124,
+      "tag": "0000_busy_doctor_octopus",
       "breakpoints": true
     }
   ]

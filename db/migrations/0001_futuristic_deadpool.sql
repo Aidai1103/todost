@@ -1,1 +1,0 @@
-ALTER TABLE "todo" DROP COLUMN IF EXISTS "age";

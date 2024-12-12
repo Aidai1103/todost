@@ -1,6 +1,6 @@
 {
-  "id": "548e391a-2616-459d-9b67-649124d836dd",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "16e6aa08-1ed7-4637-b391-e4c36081032a",
+  "prevId": "548e391a-2616-459d-9b67-649124d836dd",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -26,12 +26,6 @@
           "primaryKey": false,
           "notNull": true,
           "default": false
-        },
-        "age": {
-          "name": "age",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
         }
       },
       "indexes": {},

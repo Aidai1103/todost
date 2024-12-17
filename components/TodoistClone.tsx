@@ -5,6 +5,7 @@ import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
 import { todoType } from "@/types/todoType";
+import { useSession, signIn } from "next-auth/react";
 
 import {
   addTodo,
@@ -18,15 +19,19 @@ interface Props {
 }
 
 export default function TodoistClone({ todos }: Props) {
+  const { data: session } = useSession();
   const [tasks, setTasks] = useState<todoType[]>(todos);
 
-  const addTask = (text: string) => {
-    const id = (tasks.at(-1)?.id || 0) + 1;
-    setTasks([...tasks, { id: id, text, completed: false, isEditing: false }]);
-    addTodo(id, text);
-  };
+  if (!session) return <div>Please log in to see your tasks</div>;
 
-  const toggleTask = (id: number) => {
+  const addTask = (text: string) => {
+    const userEmail = session?.user.email;
+   const id = (tasks.at(-1)?.id || 0) + 1;
+   setTasks([...tasks, { id: id, text, completed: false, isEditing: false }]);
+   addTodo(id, text, userEmail);
+ };
+
+const toggleTask = (id: number) => {
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task
